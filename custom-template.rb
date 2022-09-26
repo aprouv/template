@@ -21,15 +21,16 @@ after_bundle do
 
   environment "config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }", env: "development"
 
-  inject_into_file "app/views/layouts/application.html.erb", after: "<body>" do
-    <<-HTML
-      <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
-    HTML
+  inject_into_file "app/views/layouts/application.html.erb", after: "<body>\n" do
+  <<-HTML
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  HTML
   end
 
   #Bootstrap
