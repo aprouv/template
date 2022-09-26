@@ -30,6 +30,7 @@ after_bundle do
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
   HTML
   end
 
